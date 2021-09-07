@@ -1,0 +1,262 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "DRDN005W NPN relay driver"
+Date "2020-03-28"
+Rev "1"
+Comp "astroelectronic@"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Wire Wire Line
+	5200 3450 5400 3450
+Wire Wire Line
+	5400 3450 5400 3600
+Connection ~ 5400 3450
+Wire Wire Line
+	4900 3450 3150 3450
+Wire Wire Line
+	5400 3900 5400 4000
+Text Label 5700 3450 0    50   ~ 0
+B
+Text Label 4050 3450 0    50   ~ 0
+CTRL
+Wire Wire Line
+	6550 3750 6550 3650
+Wire Wire Line
+	6550 2950 6550 3150
+Wire Wire Line
+	6550 3150 5600 3150
+Wire Wire Line
+	5600 3150 5600 2950
+Connection ~ 6550 3150
+Wire Wire Line
+	5600 2400 5600 2500
+Wire Wire Line
+	5600 2500 6550 2500
+Connection ~ 6550 2500
+Wire Wire Line
+	3150 3350 3150 3450
+Wire Wire Line
+	3150 4000 3150 4050
+Wire Wire Line
+	3150 4050 2750 4050
+Wire Wire Line
+	2750 4050 2750 3950
+Connection ~ 3150 4050
+Connection ~ 3150 3450
+Wire Wire Line
+	8800 2400 8800 2500
+Wire Wire Line
+	8800 3100 8800 3000
+Connection ~ 8800 2500
+Text Label 5950 3150 0    50   ~ 0
+C
+Connection ~ 5600 2500
+Wire Wire Line
+	6550 2500 6550 2650
+Wire Wire Line
+	5400 3450 6250 3450
+Wire Wire Line
+	6550 3150 6550 3250
+Wire Wire Line
+	6550 2500 8800 2500
+Wire Wire Line
+	3150 4050 3150 4100
+Wire Wire Line
+	3150 3450 3150 3600
+Wire Wire Line
+	8800 2500 8800 2600
+Wire Wire Line
+	5600 2500 5600 2650
+$Comp
+L Device:Q_NPN_CBE Q1
+U 1 1 5E7F987F
+P 6450 3450
+F 0 "Q1" H 6641 3496 50  0000 L CNN
+F 1 "DI_DRDN005W_NPN" H 6641 3405 50  0000 L CNN
+F 2 "" H 6650 3550 50  0001 C CNN
+F 3 "~" H 6450 3450 50  0001 C CNN
+F 4 "Q" H 6450 3450 50  0001 C CNN "Spice_Primitive"
+F 5 "DI_DRDN005W_NPN" H 6450 3450 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 6450 3450 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "models/DRDN005W.spice.txt" H 6450 3450 50  0001 C CNN "Spice_Lib_File"
+	1    6450 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Simulation_SPICE:DIODE D1
+U 1 1 5E7F9E15
+P 5600 2800
+F 0 "D1" V 5646 2720 50  0000 R CNN
+F 1 "DI_DRDN005W_DIODE" V 5555 2720 50  0000 R CNN
+F 2 "" H 5600 2800 50  0001 C CNN
+F 3 "~" H 5600 2800 50  0001 C CNN
+F 4 "Y" H 5600 2800 50  0001 L CNN "Spice_Netlist_Enabled"
+F 5 "D" H 5600 2800 50  0001 L CNN "Spice_Primitive"
+F 6 "DI_DRDN005W_DIODE" H 5600 2800 50  0001 C CNN "Spice_Model"
+F 7 "models/DRDN005W.spice.txt" H 5600 2800 50  0001 C CNN "Spice_Lib_File"
+	1    5600 2800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5E7FA2F1
+P 5050 3450
+F 0 "R1" V 5257 3450 50  0000 C CNN
+F 1 "1k" V 5166 3450 50  0000 C CNN
+F 2 "" V 4980 3450 50  0001 C CNN
+F 3 "~" H 5050 3450 50  0001 C CNN
+F 4 "R" H 5050 3450 50  0001 C CNN "Spice_Primitive"
+F 5 "1k" H 5050 3450 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 5050 3450 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    5050 3450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5E7FA4F1
+P 5400 3750
+F 0 "R2" H 5470 3796 50  0000 L CNN
+F 1 "10k" H 5470 3705 50  0000 L CNN
+F 2 "" V 5330 3750 50  0001 C CNN
+F 3 "~" H 5400 3750 50  0001 C CNN
+F 4 "R" H 5400 3750 50  0001 C CNN "Spice_Primitive"
+F 5 "10k" H 5400 3750 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 5400 3750 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    5400 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Simulation_SPICE:VPULSE V2
+U 1 1 5E7FC57E
+P 3150 3800
+F 0 "V2" H 3280 3846 50  0000 L CNN
+F 1 "PULSE(0 {vctrl} {tdelay} {tr} {tf} {tduty} {tcycle})" H 3280 3755 50  0000 L CNN
+F 2 "" H 3150 3800 50  0001 C CNN
+F 3 "~" H 3150 3800 50  0001 C CNN
+F 4 "Y" H 3150 3800 50  0001 L CNN "Spice_Netlist_Enabled"
+F 5 "V" H 3150 3800 50  0001 L CNN "Spice_Primitive"
+	1    3150 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Simulation_SPICE:VDC V1
+U 1 1 5E7FCCF3
+P 8800 2800
+F 0 "V1" H 8930 2846 50  0000 L CNN
+F 1 "{VCC} rser=50" H 8930 2755 50  0000 L CNN
+F 2 "" H 8800 2800 50  0001 C CNN
+F 3 "~" H 8800 2800 50  0001 C CNN
+F 4 "Y" H 8800 2800 50  0001 L CNN "Spice_Netlist_Enabled"
+F 5 "V" H 8800 2800 50  0001 L CNN "Spice_Primitive"
+	1    8800 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG01
+U 1 1 5E7FD477
+P 8800 2400
+F 0 "#FLG01" H 8800 2475 50  0001 C CNN
+F 1 "PWR_FLAG" H 8800 2573 50  0000 C CNN
+F 2 "" H 8800 2400 50  0001 C CNN
+F 3 "~" H 8800 2400 50  0001 C CNN
+	1    8800 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:0 #GND01
+U 1 1 5E7FDB0B
+P 8800 3100
+F 0 "#GND01" H 8800 3000 50  0001 C CNN
+F 1 "0" H 8800 2977 50  0000 C CNN
+F 2 "" H 8800 3100 50  0001 C CNN
+F 3 "~" H 8800 3100 50  0001 C CNN
+	1    8800 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L L1
+U 1 1 5E7FE18E
+P 6550 2800
+F 0 "L1" H 6602 2846 50  0000 L CNN
+F 1 "{L_RELAY} rser={L_RSER}" H 6602 2755 50  0000 L CNN
+F 2 "" H 6550 2800 50  0001 C CNN
+F 3 "~" H 6550 2800 50  0001 C CNN
+F 4 "Y" H 6550 2800 50  0001 C CNN "Spice_Netlist_Enabled"
+F 5 "L" H 6550 2800 50  0001 C CNN "Spice_Primitive"
+	1    6550 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR01
+U 1 1 5E7FF727
+P 5600 2400
+F 0 "#PWR01" H 5600 2250 50  0001 C CNN
+F 1 "VCC" H 5617 2573 50  0000 C CNN
+F 2 "" H 5600 2400 50  0001 C CNN
+F 3 "" H 5600 2400 50  0001 C CNN
+	1    5600 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:0 #GND02
+U 1 1 5E802E50
+P 6550 3750
+F 0 "#GND02" H 6550 3650 50  0001 C CNN
+F 1 "0" H 6550 3627 50  0000 C CNN
+F 2 "" H 6550 3750 50  0001 C CNN
+F 3 "~" H 6550 3750 50  0001 C CNN
+	1    6550 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:0 #GND03
+U 1 1 5E8032FC
+P 5400 4000
+F 0 "#GND03" H 5400 3900 50  0001 C CNN
+F 1 "0" H 5400 3877 50  0000 C CNN
+F 2 "" H 5400 4000 50  0001 C CNN
+F 3 "~" H 5400 4000 50  0001 C CNN
+	1    5400 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG02
+U 1 1 5E803687
+P 3150 3350
+F 0 "#FLG02" H 3150 3425 50  0001 C CNN
+F 1 "PWR_FLAG" H 3150 3523 50  0000 C CNN
+F 2 "" H 3150 3350 50  0001 C CNN
+F 3 "~" H 3150 3350 50  0001 C CNN
+	1    3150 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L pspice:0 #GND04
+U 1 1 5E8047BA
+P 3150 4100
+F 0 "#GND04" H 3150 4000 50  0001 C CNN
+F 1 "0" H 3150 3977 50  0000 C CNN
+F 2 "" H 3150 4100 50  0001 C CNN
+F 3 "~" H 3150 4100 50  0001 C CNN
+	1    3150 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:PWR_FLAG #FLG03
+U 1 1 5E804B89
+P 2750 3950
+F 0 "#FLG03" H 2750 4025 50  0001 C CNN
+F 1 "PWR_FLAG" H 2750 4123 50  0000 C CNN
+F 2 "" H 2750 3950 50  0001 C CNN
+F 3 "~" H 2750 3950 50  0001 C CNN
+	1    2750 3950
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

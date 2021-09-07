@@ -1,0 +1,14 @@
+*transient response
+.include ../AE01.18.01.001.cir
+.param VCC=12
+.param vctrl=5
+.param L_RELAY=1m
+.param L_RSER=0.02
+.param tr=50n
+.param tf=50n
+.param tdelay=1000m
+.param tduty=1000m
+.param tcycle=2000m
+.param x_base=3000m
+.tran 0 {x_base} 0 uic startup
+.backanno

@@ -1,0 +1,10 @@
+.title KiCad schematic
+.include "models/DRDN005W.spice.txt"
+Q1 /C /B 0 DI_DRDN005W_NPN
+D1 /C VCC DI_DRDN005W_DIODE
+R1 /CTRL /B 1k
+R2 /B 0 10k
+V2 /CTRL 0 PULSE(0 {vctrl} {tdelay} {tr} {tf} {tduty} {tcycle})
+V1 VCC 0 {VCC} rser=50
+L1 VCC /C {L_RELAY} rser={L_RSER}
+.end
